@@ -10,7 +10,7 @@
   <title>Sign In | Session App</title>
 </head>
 <body class="vh-100 d-flex justify-content-center align-items-center">
-  <form action="sign-in" method="POST" class="p-2 text-center border p-4 rounded">
+  <form action="signin" method="POST" class="p-2 text-center border p-4 rounded">
       <h1>Session App</h1>
       <div class="mb-3">
           <label for="txt-email" class="form-label">Email address</label>
@@ -23,7 +23,7 @@
       <div>
           <button class="btn btn-primary">Sign In</button>
           <p class="pt-3 m-0">New to Session App?
-              <a href="signup.html">Sign Up</a>
+              <a href="signup.jsp">Sign Up</a>
           </p>
       </div>
   </form>

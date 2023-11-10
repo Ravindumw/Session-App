@@ -15,29 +15,29 @@
     </style>
 </head>
 <body class="vh-100 d-flex justify-content-center align-items-center">
-  <form action="sign-up" method="POST" class="p-2 text-center border p-4 rounded">
+  <form action="signup" method="POST" class="p-2 text-center border p-4 rounded">
       <h1>Session App</h1>
       <p>Enter your details to crete a new account</p>
       <div class="mb-3">
           <label for="txt-name" class="form-label">Full name<sup>*</sup></label>
-          <input type="text" class="form-control text-center" id="txt-name" placeholder="Enter your full name here">
+          <input name="full-name" pattern="^[A-Za-z ]+$" required type="text" class="form-control text-center" id="txt-name" placeholder="Enter your full name here">
       </div>
       <div class="mb-3">
           <label for="txt-email" class="form-label">Email address<sup>*</sup></label>
-          <input type="email" class="form-control text-center" id="txt-email" placeholder="Enter your email here">
+          <input name="email" required type="email" class="form-control text-center" id="txt-email" placeholder="Enter your email here">
       </div>
       <div class="mb-3">
           <label for="txt-password" class="form-label">Password<sup>*</sup></label>
-          <input type="password" class="form-control text-center" id="txt-password" placeholder="Enter your password here">
+          <input name="password" minlength="4" required type="password" class="form-control text-center" id="txt-password" placeholder="Enter your password here">
       </div>
       <div class="mb-3">
           <label for="txt-confirm-password" class="form-label">Confirm Password</label>
-          <input type="password" class="form-control text-center" id="txt-confirm-password" placeholder="Enter your password again here">
+          <input name="confirm-password" minlength="4" required type="password" class="form-control text-center" id="txt-confirm-password" placeholder="Enter your password again here">
       </div>
       <div>
-          <button class="btn btn-primary">Sign Un</button>
+          <button class="btn btn-primary">Sign Up</button>
           <p class="pt-3 m-0">Already have an account?
-              <a href="signin.html">Sign In</a>
+              <a href="signin.jsp">Sign In</a>
           </p>
       </div>
   </form>

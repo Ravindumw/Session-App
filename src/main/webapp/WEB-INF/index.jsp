@@ -19,22 +19,15 @@
 
 </head>
 <body class="vh-100 d-flex flex-column">
-<header class="p-2 border-bottom d-flex justify-content-between align-items-center">
-    <h1 class="m-0">
-    <a href="#" class="text-decoration-none text-secondary">Session App</a>
-    </h1>
-    <a class="btn btn-primary" href="#">Log Out</a>
-</header>
+<%@ include file="partial/header.jsp" %>
 <main class="p-2">
     <h2 class="text-center mt-4">Welcome to Kasun Sampath! 👋</h2>
     <nav class="text-center">
-        <li><a href="page1.html">Page 1</a></li>
-        <li><a href="page2.html">Page 2</a></li>
-        <li><a href="page3.html">Page 3</a></li>
+        <li><a href="page1.jsp">Page 1</a></li>
+        <li><a href="page2.jsp">Page 2</a></li>
+        <li><a href="page3.jsp">Page 3</a></li>
     </nav>
 </main>
-<footer class="text-center border-top p-2 text-body">
-    Copyright &copy; 2023 DEP-11, All Right Reserved.
-</footer>
+<%@ include file="partial/footer.jsp" %>
 </body>
 </html>
