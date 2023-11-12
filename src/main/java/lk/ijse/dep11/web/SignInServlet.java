@@ -5,10 +5,7 @@ import org.apache.commons.dbcp2.BasicDataSource;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -22,6 +19,7 @@ public class SignInServlet extends HttpServlet {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
         String mode = req.getParameter("mode");
+        String rememberMe = req.getParameter("remember-me");
 
         BasicDataSource pool = (BasicDataSource) getServletContext().getAttribute("connectionPool");
         try(Connection connection = pool.getConnection()){
@@ -31,6 +29,17 @@ public class SignInServlet extends HttpServlet {
             if(rst.next()){
                 if(rst.getString("password").equals(DigestUtils.sha256Hex(password))){
                     HttpSession session = req.getSession();
+
+                    if(rememberMe != null){
+                        String setCookieHeader = resp.getHeader("Set-Cookie");
+                        setCookieHeader += "; Max-Age=" + (60 * 30);
+                        resp.setHeader("Set-Cookie" , setCookieHeader);
+                    }
+                    Cookie ijseCookie = new Cookie("ijse", "DEP-11");
+                    ijseCookie.setMaxAge(60 * 30);
+                    ijseCookie.setHttpOnly(true);
+                    resp.addCookie(ijseCookie);
+
                     session.setAttribute("fullName", rst.getString("full_name"));
                     session.setAttribute("mode" , mode == null ? "dark" : mode);
                     resp.sendRedirect(req.getContextPath());
