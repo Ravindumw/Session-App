@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="${mode}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -14,6 +14,7 @@
     <%@ include file="WEB-INF/partial/header.jsp" %>
     <main class="flex-grow-1">
         <h1 class="p-2 text-center">Page 1</h1>
+        <p class="p-2 text-center">Logged : ${fullName}</p>
     </main>
     <%@ include file="WEB-INF/partial/footer.jsp" %>
 </body>
