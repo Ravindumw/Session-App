@@ -11,10 +11,10 @@
 </head>
 
 <body class="d-flex flex-column vh-100">
-    <%@ include file="partial/header.jsp" %>
+    <%@ include file="WEB-INF/partial/header.jsp" %>
     <main class="flex-grow-1">
         <h1 class="p-2 text-center">Page 1</h1>
     </main>
-    <%@ include file="partial/footer.jsp" %>
+    <%@ include file="WEB-INF/partial/footer.jsp" %>
 </body>
 </html>
